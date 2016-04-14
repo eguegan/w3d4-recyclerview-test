@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
         // ...
         // Lookup the recyclerview in activity layout
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvContacts);
+        RecyclerView.ItemDecoration itemDecoration = new
+                DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
+        rvContacts.addItemDecoration(itemDecoration);
 
         // Initialize contacts
         contacts = Contact.createContactsList(20);
