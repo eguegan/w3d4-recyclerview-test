@@ -16,6 +16,14 @@ import java.util.List;
 public class ContactsAdapter extends
         RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
 
+    // Store a member variable for the contacts
+    private List<Contact> mContacts;
+
+    // Pass in the contact array into the constructor
+    public ContactsAdapter(List<Contact> contacts) {
+        mContacts = contacts;
+    }
+
     // Provide a direct reference to each of the views within a data item
     // Used to cache the views within the item layout for fast access
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -36,13 +44,7 @@ public class ContactsAdapter extends
         }
     }
 
-    // Store a member variable for the contacts
-    private List<Contact> mContacts;
 
-    // Pass in the contact array into the constructor
-    public ContactsAdapter(List<Contact> contacts) {
-        mContacts = contacts;
-    }
 
     // Usually involves inflating a layout from XML and returning the holder
     @Override
